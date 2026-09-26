@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de pagamentos</title>
+</head>
+
+
+<body>
+
+
+    <main>
+        <h1>Simulador de Caixa de Loja </h1>
+
+        <div>
+            <label for="txtValorCompra">Valor da Compra:</label>
+            <input type="number" id="txtValorCompra" placeholder="Ex.150,00">
+
+        </div>
+
+        <div>
+            <label for="cbFormaPagamento">Forma de Pagamento:</label>
+            <select id="cbFormaPagamento">
+                <option value="pix">PIX (Desconto de 5%)</option>
+                <option value="credito">Cartão de Crédito</option>
+                <option value="avista">Á vista</option>
+            </select>
+        </div>
+
+        <button type="button" onclick="calcularValor()">Calcular preço final</button>
+
+
+        <div id="resultado"></div>
+    
+     <script>
+        function calcularValor() {
+            
+            let valorDaCompra = document.getElementById('txtValorCompra').value;
+
+            let formaPamgamento = document .getElementById('cbFormaPagamento').value;
+
+            //Calcular o valor da compra
+            // Considerado desconto e frete.
+
+            let desconto = 0; 
+            let frete = 0; 
+
+            //Calcular o valor do desconto 
+
+            if (formaPamgamento == 'pix'){
+                desconto = valorDaCompra * 5/100; 
+            }
+
+            //Calcular o frete após o desconto
+
+            if (valorDaCompra <= 200) {
+                frete = valorDaCompra * 10/100;
+            }
+
+            let valorAPagar = valorDaCompra - desconto + frete;
+            
+            
+
+
+
+
+
+
+          //  alert('O valor da compra é R$:' +valorDaCompra + ' a forma de pagamento é via :' + formaPamgamento);
+        }
+
+    </script>
+
+    </main>
+    
+</body>
+
+
+</html>
