@@ -60,7 +60,30 @@
 
             let valorAPagar = valorDaCompra - desconto + frete;
             
+            // Mostrar o valor a pagar para o usuário
+
+            let divresultado = document.getElementById('resultado');
+
+
+
+
+            //Colocar o valor a pagar na div resultado
+
+            divresultado.innerHTML = `
             
+              <h1>Resultado</h1>
+              <hr>
+              <h3>Valor Total:${valorDaCompra} </h3>
+              <h3>Valor Frete:${frete} </h3>
+              <h3>Valor Desconto:${desconto} </h3>
+               <hr>
+               <h3>Valor Total:${valorAPagar} </h3>
+            
+            `;
+            
+            
+       
+
 
 
 
